@@ -1,0 +1,23 @@
+	<?php if ($_route != 'home/index/index'):?>
+	<!-- BEGIN BREADCRUMBS -->   
+    <div class="row-fluid breadcrumbs margin-bottom-40">
+        <div class="container">
+            <div class="span4">
+                <h1><?php echo $_breadcrumbList[$_categoryId]['name'];?></h1>
+            </div>
+            <div class="span8">
+                <ul class="pull-right breadcrumb">
+                    <li><a href="<?php echo _url('/');?>">Home</a> <span class="divider">/</span></li>
+					<?php foreach ($_breadcrumbList as $v):?>
+					<?php if ($v['category_id'] == $_categoryId):?>
+					<li class="active"><?php echo $v['name'];?></a></li>
+					<?php else:?>
+					<li ><a href="<?php echo _url($v['url'], array('category_id' => $v['category_id']));?>"><?php echo $v['name'];?></a> <span class="divider">/</span></li>
+					<?php endif;?>
+					<?php endforeach;?>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- END BREADCRUMBS -->
+	<?php endif;?>

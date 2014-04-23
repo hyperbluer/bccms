@@ -1,0 +1,188 @@
+<?php echo $_header;?>
+
+	<!-- BEGIN CONTAINER -->   
+    <div class="container min-hight">
+        <!-- BEGIN BLOCKQUOTE AND VIDEO -->   
+        <div class="row-fluid">
+            <!-- BEGIN SERVICE BLOCKS -->               
+            <div class="span7">
+                <div class="row-fluid margin-bottom-20">
+                    <div class="span6 service-box-v1">
+                        <div><i class="icon-thumbs-up color-grey"></i></div>
+                        <h2>Harum quidem</h2>
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.</p>
+                    </div>
+                    <div class="span6 service-box-v1">
+                        <div><i class="icon-cloud-download color-grey"></i></div>
+                        <h2>Denim robatl</h2>
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.</p>
+                    </div>
+                </div>
+                <div class="row-fluid margin-bottom-20">
+                    <div class="span6 service-box-v1">
+                        <div><i class="icon-dropbox color-grey"></i></div>
+                        <h2>Solnh mateore</h2>
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.</p>
+                    </div>
+                    <div class="span6 service-box-v1">
+                        <div><i class="icon-gift color-grey"></i></div>
+                        <h2>Molestia pore</h2>
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.</p>
+                    </div>
+                </div>
+                <div class="row-fluid margin-bottom-20">
+                    <div class="span6 service-box-v1">
+                        <div><i class="icon-comments color-grey"></i></div>
+                        <h2>Harum quidem</h2>
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.</p>
+                    </div>
+                    <div class="span6 service-box-v1">
+                        <div><i class="icon-globe color-grey"></i></div>
+                        <h2>Denim robatl</h2>
+                        <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- END SERVICE BLOCKS --> 
+
+            <!-- BEGIN VIDEO AND TESTIMONIALS -->   
+            <div class="span5">
+                <!-- BEGIN VIDEO -->   
+                <iframe class="margin-bottom-10" src="http://player.vimeo.com/video/56974716?portrait=0" height="270" style="width:100%; border:0" allowFullScreen></iframe>
+                <!-- END VIDEO -->   
+
+                <!-- BEGIN TESTIMONIALS -->
+                <div class="testimonials-v1">
+                    <h2 class="block">Clients Testimonials</h2>                
+                    <div id="myCarousel1" class="carousel slide">
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="active item">
+                                <span class="testimonials-slide">Denim you probably haven't heard of. Lorem ipsum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met consectetur adipisicing sit amet do eiusmod dolore.</span>
+                                <div class="carousel-info">
+                                    <img class="pull-left" src="<?php echo ASSETS_PATH;?>images/people/img3-small.jpg" alt="" />
+                                    <div class="pull-left">
+                                        <span class="testimonials-name">Lina Doe</span>
+                                        <span class="testimonials-post">Commercial Director</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <span class="testimonials-slide">Raw denim you Mustache cliche tempor, williamsburg carles vegan helvetica probably haven't heard of them jean shorts austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</span>
+                                <div class="carousel-info">
+                                    <img class="pull-left" src="<?php echo ASSETS_PATH;?>images/people/img2-small.jpg" alt="" />
+                                    <div class="pull-left">
+                                        <span class="testimonials-name">Lina Doe</span>
+                                        <span class="testimonials-post">Commercial Director</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <span class="testimonials-slide">Reprehenderit butcher stache cliche tempor, williamsburg carles vegan helvetica.retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid Aliquip placeat salvia cillum iphone.</span>
+                                <div class="carousel-info">
+                                    <img class="pull-left" src="<?php echo ASSETS_PATH;?>images/people/img5-small.jpg" alt="" />
+                                    <div class="pull-left">
+                                        <span class="testimonials-name">Lina Doe</span>
+                                        <span class="testimonials-post">Commercial Director</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Carousel nav -->
+                        <a class="left-btn" href="#myCarousel1" data-slide="prev"></a>
+                        <a class="right-btn" href="#myCarousel1" data-slide="next"></a>
+                    </div>
+                </div>
+                <!-- END TESTIMONIALS -->                  
+            </div>
+            <!-- END BEGIN VIDEO AND TESTIMONIALS -->   
+        </div>
+        <!-- END BLOCKQUOTE AND VIDEO -->
+
+        <!-- BEGIN BLOCKQUOTE BLOCK -->   
+        <div class="row-fluid quote-v1">
+            <div class="span9 quote-v1-inner">
+                <span>Metronic - The Most Complete & Popular Admin & Frontend Theme</span>
+            </div>
+            <div class="span3 quote-v1-inner text-right">
+                <a class="btn-transparent" href="http://www.keenthemes.com/preview/index.php?theme=metronic_admin" target="_blank"><i class="icon-rocket margin-right-10"></i>Preview Admin</a>
+                <!--<a class="btn-transparent" href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469"><i class="icon-gift margin-right-10"></i>Purchase 2 in 1</a>-->
+            </div>
+        </div>
+        <!-- END BLOCKQUOTE BLOCK -->
+
+        <div class="clearfix"></div>
+
+        <!-- BEGIN SERVICE INFO -->   
+        <div class="row-fluid margin-bottom-40">
+            <!-- TABS -->
+            <div class="span7 tab-style-1 margin-bottom-20">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab-1" data-toggle="tab">Multipurpose</a></li>
+                    <li><a href="#tab-2" data-toggle="tab">Documented</a></li>
+                    <li><a href="#tab-3" data-toggle="tab">Responsive</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane row-fluid fade in active" id="tab-1">
+                        <div class="span3">
+                            <a href="<?php echo ASSETS_PATH;?>images/pics/img1-large.jpg" class="fancybox-button" title="Image Title" data-rel="fancybox-button">
+                                <img class="img-circle" src="<?php echo ASSETS_PATH;?>images/pics/img1-large.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="span9">
+                            <p class="margin-bottom-10">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid Aliquip placeat salvia cillum iphone.</p>
+                            <p><a href="#" class="read-more">Read more</a></p>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab-2">
+                        <div class="span9">
+                            <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia..</p>
+                        </div>
+                        <div class="span3">
+                            <a href="<?php echo ASSETS_PATH;?>images/pics/img2-large.jpg" class="fancybox-button" title="Image Title" data-rel="fancybox-button">
+                                <img class="img-circle" src="<?php echo ASSETS_PATH;?>images/pics/img2-large.jpg" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="tab-3">
+                        <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- END TABS -->
+
+            <!-- BEGIN BLOCKQUOTE -->   
+            <div class="span5">
+                <h2>Harumquid rerumetde</h2>
+                <p>Laborum et dolorum fuga. Et harum quidem rerum et quas molestias excepturi sint occaecati facilis est et expedita elit. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus dolores et quas</p>
+                <p>Molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.</p>
+                <br>
+                <blockquote>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <small>Someone famous <cite title="Source Title">Source Title</cite></small>
+                </blockquote>                
+            </div>
+            <!-- END BLOCKQUOTE -->
+        </div>
+        <!-- END SERVICE INFO -->   
+
+        <!-- BEGIN STEPS -->
+        <div class="row-fluid no-space-steps margin-bottom-40">
+            <div class="span4 front-steps front-step-one">
+                <h2>Goal definition</h2>
+                <p>Lorem ipsum dolor sit amet sit consectetur adipisicing eiusmod tempor.</p>
+            </div>
+            <div class="span4 front-steps front-step-two">
+                <h2>Analyse</h2>
+                <p>Lorem ipsum dolor sit amet sit consectetur adipisicing eiusmod tempor.</p>
+            </div>
+            <div class="span4 front-steps front-step-three">
+                <h2>Implementation</h2>
+                <p>Lorem ipsum dolor sit amet sit consectetur adipisicing eiusmod tempor.</p>
+            </div>
+        </div>
+        <!-- END STEPS -->          
+    </div>
+    <!-- END CONTAINER -->
+
+<?php echo $_footer;?>

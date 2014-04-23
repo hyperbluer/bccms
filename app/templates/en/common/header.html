@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+	<meta charset="utf-8" />
+	<title>BCCMS</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+	<link href="<?php echo ASSETS_PATH;?>plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="<?php echo ASSETS_PATH;?>plugins/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+	<link href="<?php echo ASSETS_PATH;?>plugins/font-awesome/css/font-awesome.css" rel="stylesheet" />
+	<link href="<?php echo ASSETS_PATH;?>css/reset.css" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo ASSETS_PATH;?>css/style_metro.css" rel="stylesheet" />
+	<link href="<?php echo ASSETS_PATH;?>css/style.css" rel="stylesheet" />
+	<link href="<?php echo ASSETS_PATH;?>css/style_responsive.css" rel="stylesheet" />
+	
+	<link href="<?php echo ASSETS_PATH;?>plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" />               
+    <link href="<?php echo ASSETS_PATH;?>plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="<?php echo ASSETS_PATH;?>plugins/jquery-bxslider/jquery.bxslider.css" rel="stylesheet" />          
+    <link rel="stylesheet" href="<?php echo ASSETS_PATH;?>plugins/revolution_slider/css/rs-style.css" media="screen">
+    <link rel="stylesheet" href="<?php echo ASSETS_PATH;?>plugins/revolution_slider/rs-plugin/css/settings.css" media="screen">                
+
+	<!-- END GLOBAL MANDATORY STYLES -->
+	<!-- BEGIN PAGE LEVEL STYLES -->
+	<link href="<?php echo ASSETS_PATH;?>css/themes/blue.css" rel="stylesheet" type="text/css"  id="style_color"/>
+	<link href="<?php echo ASSETS_PATH;?>css/custom.css" rel="stylesheet" type="text/css"  id="style_color"/>
+	<!-- END PAGE LEVEL STYLES -->
+	<link rel="shortcut icon" href="favicon.ico" />
+	<script type="text/javascript">
+    var ASSETS_PATH = '<?php echo ASSETS_PATH;?>';
+    </script>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body>
+	<!-- BEGIN STYLE CUSTOMIZER -->
+	<div class="color-panel hidden-phone">
+		<div class="color-mode-icons icon-color"></div>
+		<div class="color-mode-icons icon-color-close"></div>
+		<div class="color-mode">
+			<p>THEME COLOR</p>
+			<ul class="inline">
+				<li class="color-blue current color-default" data-style="blue"></li>
+				<li class="color-red" data-style="red"></li>
+				<li class="color-green" data-style="green"></li>
+				<li class="color-orange" data-style="orange"></li>
+			</ul>
+		</div>
+	</div>
+	<!-- END BEGIN STYLE CUSTOMIZER -->    
+
+	<!-- BEGIN TOP BAR -->
+    <div class="front-topbar">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span6">
+                    <ul class="unstyled inline">
+                        <li><i class="icon-phone topbar-info-icon top-2"></i>Tel: <span>027-88888888</span></li>
+                        <li class="sep"><span>|</span></li>
+                        <li><i class="icon-envelope-alt topbar-info-icon top-2"></i>E-mail: <span>service@bingceng.com</span></li>
+                    </ul>
+                </div>
+                <div class="span6 topbar-social">
+                    <ul class="unstyled inline">
+						<?php foreach($_siteList as $v):?>
+                        <li><a href="<?php echo _url('/', array('site_id' =>$v['site_id']));?>" title="<?php echo $v['name'];?>"><i><img src="<?php echo ASSETS_PATH;?>img/flags/<?php echo $_languageList[$v['language_id']]['image'];?>" /></i></a></li>
+						<?php endforeach;?>
+                    </ul>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <!-- END TOP BAR -->
+
+    <!-- BEGIN HEADER -->
+    <div class="front-header">
+        <div class="container">
+            <div class="navbar">
+                <div class="navbar-inner">
+				
+                    <!-- BEGIN LOGO (you can use logo image instead of text)-->
+                    <a class="brand logo-v1" href="<?php echo _url('/');?>">
+                        <img src="<?php echo ASSETS_PATH;?>img/logo-150x30.png" id="logoimg" alt="">
+						<small style="vertical-align: bottom;"><?php echo $_siteList[$_session['site_id']]['name'];?></small>
+                    </a>
+                    <!-- END LOGO -->
+
+                    <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <!-- END RESPONSIVE MENU TOGGLER -->
+
+                    <!-- BEGIN TOP NAVIGATION MENU -->
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+							<li <?php if (!$_categoryId):?>class="active"<?php endif;?>>
+                                <a href="<?php echo _url('/home');?>">Home</a>
+                            </li>
+							<?php foreach($_menuTree as $k => $node):?>
+							<?php if (is_array($node->children) && count($node->children)):?>
+							<li class="dropdown <?php if (isset($_breadcrumbList[$node->id]) || $_categoryId == $node->id):?>active<?php endif;?>">
+								<a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">
+                                    <?php echo $node->name;?>
+                                    <i class="icon-angle-down"></i>
+                                </a>
+                                <ul class="dropdown-menu">
+									<?php foreach ($node->children as $k => $nodeSecond):?>
+                                    <li <?php if (isset($_breadcrumbList[$nodeSecond->id]) || $_categoryId == $nodeSecond->id):?>class="active"<?php endif;?>><a href="<?php echo _url($nodeSecond->url, array('category_id' => $nodeSecond->id));?>"  target="<?php echo $nodeSecond->target;?>"><?php echo $nodeSecond->name;?></a></li>
+									<?php endforeach;?>
+                                </ul>
+							</li>
+							<?php else:?>
+                            <li <?php if (isset($_breadcrumbList[$node->id]) || $_categoryId == $node->id):?>class="active"<?php endif;?>>
+                                <a href="<?php echo _url($node->url, array('category_id' => $node->id));?>" target="<?php echo $node->target;?>"><?php echo $node->name;?></a>
+                            </li>
+							<?php endif;?>
+							<?php endforeach;?>
+                            <li class="dropdown">
+                                <a href="<?php echo _url('blog');?>">Blog</a>
+                            </li>
+                            <li class="menu-search">
+                                <span class="sep"></span>
+                                <i class="icon-search search-btn"></i>
+                            </li>
+                        </ul>
+                        <div class="search-box">
+                            <div class="input-append">
+                                <form>
+                                    <input style="background:#fff;" class="m-wrap" type="text" placeholder="search" />
+                                    <button type="submit" class="btn theme-btn">Go</button>
+                                </form>
+                            </div>
+                        </div>                            
+                    </div>
+                    <!-- BEGIN TOP NAVIGATION MENU -->
+                </div>
+            </div>
+        </div>                   
+    </div>
+    <!-- END HEADER --> 
+	
+	<?php echo $_breadcrumb;?>

@@ -1,0 +1,6 @@
+<p>Title: <?php echo $title;?></p>
+<p>Content: <?php echo $content;?></p>
+<p>Internal url: <a href="<?php echo _url('test/index/index', array('param_1' => 'value_1', 'param_2' => 'value_2'));?>">点击链接</a></p>
+<p>Internal url 2: <a href="<?php echo _url('test/index/index?param_1=value&param_3=value_3', array('param_1' => 'value_1', 'param_2' => 'value_2'));?>">点击链接</a></p>
+<p>Internal url 3: <a href="<?php echo _url();?>">点击链接</a></p>
+<p>External url: <a href="<?php echo _url('http://www.baidu.com', array(), false);?>">点击链接</a></p>

@@ -1,0 +1,27 @@
+<?php echo $_header;?>
+	
+	<!-- BEGIN CONTAINER -->   
+    <div class="container min-hight">
+        <!-- BEGIN BLOG -->
+        <div class="row-fluid">
+            <!-- BEGIN LEFT SIDEBAR -->            
+            <div class="span9 blog-item margin-bottom-40">
+                <h2><?php echo $item['title'];?></h2>
+                <div class="content"><?php echo Filter::htmlUnEscape($item['content']);?></div>
+                <ul class="blog-info">
+                    <li><i class="icon-user"></i> By admin</li>
+                    <li><i class="icon-calendar"></i> <?php echo Date::format(null,$item['add_time']);?></li>
+                    <li><i class="icon-comments"></i> 0</li>
+                    <li><i class="icon-tags"></i> <?php echo $item['keywords'];?></li>
+                </ul>
+            </div>
+            <!-- END LEFT SIDEBAR -->
+
+            <?php echo $_sidebar;?>        
+        </div>
+        <!-- END BEGIN BLOG -->
+    </div>
+    <!-- END CONTAINER -->
+
+
+<?php echo $_footer;?>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+	<meta charset="utf-8" />
+	<title>BCCMS后台管理系统</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+	<link href="<?php echo ASSETS_PATH;?>plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="<?php echo ASSETS_PATH;?>plugins/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+	<link href="<?php echo ASSETS_PATH;?>plugins/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="<?php echo ASSETS_ADMIN_PATH;?>css/style_metro.css" rel="stylesheet" />
+	<link href="<?php echo ASSETS_ADMIN_PATH;?>css/style.css" rel="stylesheet" />
+	<link href="<?php echo ASSETS_ADMIN_PATH;?>css/style_responsive.css" rel="stylesheet" />
+	<link href="<?php echo ASSETS_ADMIN_PATH;?>css/themes/bc.css" rel="stylesheet" id="style_color" />
+	<link href="<?php echo ASSETS_PATH;?>plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <link href="<?php echo ROOT_PATH;?>favicon.ico" rel="shortcut icon"/>
+</head>
+<body>
+<div class="modal fade in">
+  <div class="modal-header">
+    <h3>信息提示</h3>
+  </div>
+  <div class="modal-body">
+    <p><?php echo $message;?></p>
+  </div>
+  <div class="modal-footer">
+    <a href="javascript:window.history.go(-1);" class="btn blue">返回上一页</a>
+    <?php if ($referer):?>
+    <a href="<?php echo $referer;?>" class="btn green">手动跳转</a>
+	<script language="javascript">
+        setTimeout('window.location.href ="<?php echo $referer;?>"',
+            '<?php echo $time;?>'
+        );
+    </script>
+	<?php endif;?>
+  </div>
+</div>
+</body>
+</html>

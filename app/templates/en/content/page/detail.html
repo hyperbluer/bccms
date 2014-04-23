@@ -1,0 +1,19 @@
+<?php echo $_header;?>
+		
+	<!-- BEGIN CONTAINER -->   
+    <div class="container min-hight">
+        <!-- BEGIN BLOG -->
+        <div class="row-fluid">
+            <!-- BEGIN LEFT SIDEBAR -->            
+            <div class="span9 blog-item margin-bottom-40">
+                <div class="content"><?php echo Filter::htmlUnEscape($item['content']);?></div>
+            </div>
+            <!-- END LEFT SIDEBAR -->
+
+            <?php echo $_sidebar;?>        
+        </div>
+        <!-- END BEGIN BLOG -->
+    </div>
+    <!-- END CONTAINER -->
+
+<?php echo $_footer;?>
