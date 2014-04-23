@@ -1,7 +1,7 @@
 <?php echo $_header;?>
 				<!-- BEGIN PAGE CONTENT-->
 				<div class="row-fluid ">
-					<div class="span6 responsive" data-tablet="span12 fix-offset" data-desktop="span6">
+					<div class="span12 responsive" data-tablet="span12 fix-offset" data-desktop="span12">
 						<!-- BEGIN TABLE PORTLET-->
 						<div class="portlet box grey">
 							<div class="portlet-title">
