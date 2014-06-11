@@ -44,7 +44,7 @@
                     <span>请输入正确的账号及密码.</span>
                   </div>
                 <div class="form-actions">
-                    <span class="pull-left"><a href="#" class="flip-link btn blue" id="to-recover">忘记密码?</a></span>
+                    <span class="pull-left"><button type="reset" class="flip-link btn blue">重置</button></span>
                     <span class="pull-right"><button type="submit" class="btn green" /> 登录</button></span>
                 </div>
                 <input type="hidden" name="remember" value="0"/>

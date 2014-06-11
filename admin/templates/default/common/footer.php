@@ -7,7 +7,7 @@
     <!-- BEGIN FOOTER -->
 	<div class="footer">
 		<div class="footer-inner">
-		2013 &copy; Devlopment by Hyperblue, Design by keenthemes. Run Time:<?php echo $_runTime;?>s
+		2013 &copy; Devlopment by Hyperblue. Run Time:<?php echo $_runTime;?>s
 		</div>
 		<div class="footer-tools">
 			<span class="go-top">

@@ -38,7 +38,7 @@
 				<div class="control-group">
 					<label class="control-label" for="input_content">内容</label>
 					<div class="controls">
-						<textarea name="code[content]" id="input_content" placeholder="" class="large m-wrap"><?php echo $code['content'];?></textarea>
+						<textarea name="code[content]" id="input_content" placeholder="" class="large m-wrap" rows="10"><?php echo $code['content'];?></textarea>
 						<span class="help-inline"></span>
 					</div>
 				</div>
@@ -60,6 +60,9 @@
 							</div>
 							<span class="help-inline"></span>
 						</div>
+                        <?php if ($code['image']):?>
+                        <img src="<?php echo UPLOAD_PATH.'images/'.$code['image']; ?>" width="300"/>
+                        <?php endif;?>
 					</div>
 				</div>
 				<div class="control-group">

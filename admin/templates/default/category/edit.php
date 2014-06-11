@@ -57,7 +57,7 @@
 								<div class="control-group">
 									<label class="control-label" for="input_model">内容模型 <span class="required">*</span></label>
 									<div class="controls">
-										<select class="m-wrap" name="info[model]" id="input_model">
+										<select class="m-wrap" name="info[model]" id="input_model" disabled>
 											<?php foreach($modelList as $k => $v):?>
 											<option value="<?php echo $v['alias'];?>" <?php if ($v['alias'] == $item['model']) echo 'selected="selected"';?>><?php echo $v['name'];?></option>
 											<?php endforeach;?>

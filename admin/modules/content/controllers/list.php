@@ -53,7 +53,7 @@ class Controller_Content_List extends App_Controller_Admin
 			$page = $this->request->get->get('page');
 			
 			$where = array('category_id' => $this->categoryId, 'site_id' => $this->session->get('site_id'));
-			$order = array('sort_order' => 'asc', 'content_id' => 'asc');
+			$order = array('sort_order' => 'asc', 'content_id' => 'desc');
 			$dataList = $this->Model_Content->getListByPage($where, $order, $page);
 
 			$this->tpl->assign('pages', $this->Model_Content->pages);

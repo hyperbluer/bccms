@@ -54,6 +54,26 @@ class Controller_Content_Form extends App_Controller_Admin
 			$data['category_id'] = $this->categoryId;
             $data['add_time'] = $info['add_time'] ? strtotime($info['add_time']) : BC_SYS_TIME;
 
+            //上传图片
+            if (isset($_FILES['file']['name']['original_img']))
+            {
+                $uploadClass = new Upload();
+                $uploadClass->saveFilePath = APP_UPLOAD_PATH.'images'.DS;
+                $uploadClass->uploadFiles = $_FILES['file'];
+                $uploadClass->upload();
+                $uploadInfos = $uploadClass->getSaveInfo();
+                if (is_array($uploadInfos))
+                {
+                    isset($uploadInfos['original_img']['newFilename']) && $data['original_img'] = $uploadInfos['original_img']['newFilename'];
+                    
+                    //TODO 将上传文件写入attachment表
+                }
+                else
+                {
+                    $this->message($uploadInfos, '', 0);
+                }
+            }
+
             $result = $this->Model_Content->insert($data);
             if ($result[0])
             {
@@ -61,6 +81,23 @@ class Controller_Content_Form extends App_Controller_Admin
 				{
 					is_array($v) && $extra[$k] = implode(',', $v);
 				}
+                if (count($_FILES['extra']['name']))
+                {
+                    $uploadClass = new Upload();
+                    $uploadClass->saveFilePath = APP_UPLOAD_PATH.'images'.DS;
+                    $uploadClass->uploadFiles = $_FILES['extra'];
+                    $uploadClass->upload();
+                    $uploadInfos = $uploadClass->getSaveInfo();
+                    if (is_array($uploadInfos))
+                    {
+                        foreach ($uploadInfos as $k => $v)
+                        {
+                            isset($uploadInfos[$k]['newFilename']) && $extra[$k] = $uploadInfos[$k]['newFilename'];
+                        }
+                        
+                        //TODO 将上传文件写入attachment表
+                    }
+                }
 				
 				$extra['content_id'] = $result[0];
 				$this->Model_Content->tableName = $this->Model_Content->dataTable;
@@ -102,6 +139,26 @@ class Controller_Content_Form extends App_Controller_Admin
             $data = array_intersect_key($info,$defaultData);
 			$info['add_time'] && $data['add_time'] = strtotime($info['add_time']);
 
+            //上传图片
+            if (isset($_FILES['file']['name']['original_img']))
+            {
+                $uploadClass = new Upload();
+                $uploadClass->saveFilePath = APP_UPLOAD_PATH.'images'.DS;
+                $uploadClass->uploadFiles = $_FILES['file'];
+                $uploadClass->upload();
+                $uploadInfos = $uploadClass->getSaveInfo();
+                if (is_array($uploadInfos))
+                {
+                    isset($uploadInfos['original_img']['newFilename']) && $data['original_img'] = $uploadInfos['original_img']['newFilename'];
+                    
+                    //TODO 将上传文件写入attachment表
+                }
+                else
+                {
+                    $this->message($uploadInfos, '', 0);
+                }
+            }
+
             $where = array('content_id' => $id, 'site_id' => $this->session->get('site_id'));
             $result = $this->Model_Content->update($data, $where);
             if ($result)
@@ -110,6 +167,24 @@ class Controller_Content_Form extends App_Controller_Admin
 				{
 					is_array($v) && $extra[$k] = implode(',', $v);
 				}
+                if (count($_FILES['extra']['name']))
+                {
+                    $uploadClass = new Upload();
+                    $uploadClass->saveFilePath = APP_UPLOAD_PATH.'images'.DS;
+                    $uploadClass->uploadFiles = $_FILES['extra'];
+                    $uploadClass->upload();
+                    $uploadInfos = $uploadClass->getSaveInfo();
+                    if (is_array($uploadInfos))
+                    {
+                        foreach ($uploadInfos as $k => $v)
+                        {
+                            isset($uploadInfos[$k]['newFilename']) && $extra[$k] = $uploadInfos[$k]['newFilename'];
+                        }
+                        
+                        //TODO 将上传文件写入attachment表
+                    }
+                }
+
 				$where = array('content_id' => $id);
 				$this->Model_Content->tableName = $this->Model_Content->dataTable;
                 $this->Model_Content->update($extra, $where);
@@ -127,6 +202,7 @@ class Controller_Content_Form extends App_Controller_Admin
             $fields = $this->Model_Model->getExtraColumns($this->categoryResult['model']);
             //获取内容信息
             $result = $this->Model_Content->getOneByModel($id);
+            $result['content'] = stripslashes($result['content']);
             
             $this->tpl->assign('extraFieldList', $fields);
             $this->tpl->assign('item', $result);

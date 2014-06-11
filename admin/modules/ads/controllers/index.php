@@ -111,6 +111,11 @@ class Controller_Ads_Index extends App_Controller_Admin
     public function edit()
     {
         $id = $this->request->get->get('id');
+        $where = array('ads_id' => $id);
+        $result = $this->Model_Ads->getOne($where);
+        $code = unserialize($result['code']);
+        $code['content'] = stripslashes($code['content']);
+
         if ($this->request->isPost())
         {
             $defaultData = array(
@@ -120,6 +125,7 @@ class Controller_Ads_Index extends App_Controller_Admin
             );
 			
             $info = $this->request->post->get('info');
+            $newCode = $this->request->post->get('code');
             $data = array_intersect_key($info,$defaultData);
 			$data['status'] = 0;
 			(isset($info['status']) && $info['status'] == 'on') && $data['status'] = 1;
@@ -134,7 +140,7 @@ class Controller_Ads_Index extends App_Controller_Admin
 				$uploadInfos = $uploadClass->getSaveInfo();
 				if (is_array($uploadInfos))
 				{
-					isset($uploadInfos['image']['newFilename']) && $code['image'] = $uploadInfos['image']['newFilename'];
+					isset($uploadInfos['image']['newFilename']) && $newCode['image'] = $uploadInfos['image']['newFilename'];
 					
 					//TODO 将上传文件写入attachment表
 				}
@@ -143,7 +149,8 @@ class Controller_Ads_Index extends App_Controller_Admin
 					$this->message($uploadInfos, '', 0);
 				}
 			}
-			$data['code'] = serialize($code);
+			$data['code'] = is_array($newCode) ? array_merge($code, $newCode) : $code;
+            $data['code'] = serialize($data['code']);
 
             $where = array('ads_id' => $id);
             $result = $this->Model_Ads->update($data, $where);
@@ -158,10 +165,6 @@ class Controller_Ads_Index extends App_Controller_Admin
         }
         else
         {
-            $where = array('ads_id' => $id);
-            $result = $this->Model_Ads->getOne($where);
-			$code = unserialize($result['code']);
-
 			$where = array('ads_position_id' => $result['ads_position_id']);
 			$positionResult = $this->Model_Position->getOne($where);
 

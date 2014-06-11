@@ -103,7 +103,14 @@ class Form
 
     public static function image($name,  $id = '', $value = '', $class = '')
     {
-        $html = '<div class="fileupload fileupload-new" data-provides="fileupload">
+        $html = '';
+        if ($value)
+        {
+            $html = '<div class="fileupload-new thumbnail" style="width: 200px;">
+                <img src="'.UPLOAD_PATH.'images/'.$value.'" alt="" style="width: 200px;">
+            </div><br />';
+        }
+        $html .= '<div class="fileupload fileupload-new" data-provides="fileupload">
 					<div class="input-append">
 						<div class="uneditable-input">
 							<i class="icon-file fileupload-exists"></i>

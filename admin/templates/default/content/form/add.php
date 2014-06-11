@@ -69,10 +69,23 @@
 									</div>
 								</div>
 								<div class="control-group">
-									<label class="control-label" for="input_original_img">图片</label>
+									<label class="control-label" for="input_original_img">缩略图</label>
 									<div class="controls">
-										<input name="info[original_img]" id="input_original_img"  type="text" placeholder="" class="m-wrap"/>
-										<span class="help-inline"></span>
+										<div class="fileupload fileupload-new" data-provides="fileupload">
+											<div class="input-append">
+												<div class="uneditable-input">
+													<i class="icon-file fileupload-exists"></i>
+													<span class="fileupload-preview"></span>
+												</div>
+												<span class="btn btn-file">
+												<span class="fileupload-new">选择文件</span>
+												<span class="fileupload-exists">更换</span>
+													<input type="file" name="file[original_img]" id="input_original_img" class="default" />
+												</span>
+												<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">移除</a>
+											</div>
+											<span class="help-inline"></span>
+										</div>
 									</div>
 								</div>
 								<div class="control-group">

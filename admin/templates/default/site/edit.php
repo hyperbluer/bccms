@@ -123,7 +123,7 @@ jQuery(document).ready(function() {
             alias = $form.find('input[name=alias]').val(),
             language_id = $form.find('#input_language_id').val(),
             keywords = $form.find('input[name=keywords]').val(),
-            description = $form.find('input[name=description]').val(),
+            description = $form.find('textarea[name=description]').val(),
             sort_order = $form.find('input[name=sort_order]').val(),
             status = $form.find('input[name=status]').is(':checked') === true ? 1 : 0;
         $.ajax({

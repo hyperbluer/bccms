@@ -92,10 +92,10 @@ class Model_Category extends App_Model_Admin
 				'alias' => 'link',
 				'name' => '链接',
 			),
-			array(
+			/*array(
 				'alias' => 'plugin',
 				'name' => '插件',
-			),
+			),*/
 		);
 		$modelList = $this->loader->model('model/model')->getAll(array('status' => 1), array(), array('name', 'alias'));
 		$modelList = array_merge($modelList, $defaultModelList);

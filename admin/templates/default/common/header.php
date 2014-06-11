@@ -60,7 +60,7 @@
                                 </ul>
                                 <b class="caret-out"></b>
                             </li>
-							<li <?php if ($_route == 'index/index/index') echo 'class="active"';?>><a href="<?php echo _url('/',array('menu_id' => 1));?>">控制面板</a><li>
+							<li <?php if ($_route == 'index/index/index') echo 'class="active"';?>><a href="<?php echo _url('index/index',array('menu_id' => 1));?>">控制面板</a><li>
 							<li <?php if (BC::$module == 'content') echo 'class="active"';?>><a href="<?php echo _url('content',array('menu_id' => 49));?>">内容管理</a><li>
                         </ul>
                     </div>
@@ -73,199 +73,14 @@
 				<!-- END RESPONSIVE MENU TOGGLER -->
 				<!-- BEGIN TOP NAVIGATION MENU -->
 				<ul class="nav pull-right">
-					<!-- BEGIN NOTIFICATION DROPDOWN -->
-					<li class="dropdown" id="header_notification_bar">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-						<i class="icon-warning-sign"></i>
-						<span class="badge">6</span>
-						</a>
-						<ul class="dropdown-menu extended notification">
-							<li>
-								<p>您有14条未读通知</p>
-							</li>
-							<li>
-								<a href="javascript:;" onclick="App.onNotificationClick(1)">
-								<span class="label label-success"><i class="icon-plus"></i></span>
-								新用户注册.
-								<span class="time">刚刚</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-								<span class="label label-important"><i class="icon-bolt"></i></span>
-								服务器内存不足.
-								<span class="time">15分钟前</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-								<span class="label label-warning"><i class="icon-bell"></i></span>
-								服务器无响应.
-								<span class="time">22分钟前</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-								<span class="label label-info"><i class="icon-bullhorn"></i></span>
-								应用错误.
-								<span class="time">40分钟前</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-								<span class="label label-important"><i class="icon-bolt"></i></span>
-								数据库使用率达68%.
-								<span class="time">2小时前</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-								<span class="label label-important"><i class="icon-bolt"></i></span>
-								禁用2个IP地址.
-								<span class="time">5小时前</span>
-								</a>
-							</li>
-							<li class="external">
-								<a href="#">查看所有通知 <i class="m-icon-swapright"></i></a>
-							</li>
-						</ul>
-					</li>
-					<!-- END NOTIFICATION DROPDOWN -->
-					<!-- BEGIN INBOX DROPDOWN -->
-					<li class="dropdown" id="header_inbox_bar">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-						<i class="icon-envelope-alt"></i>
-						<span class="badge">5</span>
-						</a>
-						<ul class="dropdown-menu extended inbox">
-							<li>
-								<p>您有12条未读短消息</p>
-							</li>
-							<li>
-								<a href="#">
-								<span class="photo"><img src="<?php echo ASSETS_ADMIN_PATH;?>img/avatar2.jpg" alt="" /></span>
-								<span class="subject">
-								<span class="from">张三</span>
-								<span class="time">刚刚</span>
-								</span>
-								<span class="message">
-								你好
-								</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-								<span class="photo"><img src="<?php echo ASSETS_ADMIN_PATH;?>img/avatar3.jpg" alt="" /></span>
-								<span class="subject">
-								<span class="from">李四</span>
-								<span class="time">16分钟前</span>
-								</span>
-								<span class="message">
-								你好
-								</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-								<span class="photo"><img src="<?php echo ASSETS_ADMIN_PATH;?>img/avatar1.jpg" alt="" /></span>
-								<span class="subject">
-								<span class="from">王五</span>
-								<span class="time">2小时前</span>
-								</span>
-								<span class="message">
-								你好
-								</span>
-								</a>
-							</li>
-							<li class="external">
-								<a href="#">查看所有短消息 <i class="m-icon-swapright"></i></a>
-							</li>
-						</ul>
-					</li>
-					<!-- END INBOX DROPDOWN -->
-					<!-- BEGIN TODO DROPDOWN -->
-					<li class="dropdown" id="header_task_bar">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-						<i class="icon-tasks"></i>
-						<span class="badge">5</span>
-						</a>
-						<ul class="dropdown-menu extended tasks">
-							<li>
-								<p>您有12条待执行任务</p>
-							</li>
-							<li>
-								<a href="#">
-								<span class="task">
-								<span class="desc">新版本发布进度 v1.2</span>
-								<span class="percent">30%</span>
-								</span>
-								<span class="progress progress-success ">
-								<span style="width: 30%;" class="bar"></span>
-								</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-								<span class="task">
-								<span class="desc">应用开发进度</span>
-								<span class="percent">65%</span>
-								</span>
-								<span class="progress progress-danger progress-striped active">
-								<span style="width: 65%;" class="bar"></span>
-								</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-								<span class="task">
-								<span class="desc">手机APP进度</span>
-								<span class="percent">98%</span>
-								</span>
-								<span class="progress progress-success">
-								<span style="width: 98%;" class="bar"></span>
-								</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-								<span class="task">
-								<span class="desc">数据库迁移进度</span>
-								<span class="percent">10%</span>
-								</span>
-								<span class="progress progress-warning progress-striped">
-								<span style="width: 10%;" class="bar"></span>
-								</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-								<span class="task">
-								<span class="desc">WEB服务器升级进度</span>
-								<span class="percent">58%</span>
-								</span>
-								<span class="progress progress-info">
-								<span style="width: 58%;" class="bar"></span>
-								</span>
-								</a>
-							</li>
-							<li class="external">
-								<a href="#">查看所有任务 <i class="m-icon-swapright"></i></a>
-							</li>
-						</ul>
-					</li>
-					<!-- END TODO DROPDOWN -->
 					<!-- BEGIN USER LOGIN DROPDOWN -->
 					<li class="dropdown user">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-						<img alt="" src="<?php echo ASSETS_ADMIN_PATH;?>img/avatar1_small.jpg" />
+						<img alt="" src="<?php echo ASSETS_ADMIN_PATH;?>img/avatar.png" width="29"/>
 						<span class="username"><?php echo $_session['username'];?></span>
 						<i class="icon-angle-down"></i>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="#"><i class="icon-user"></i> 个人资料</a></li>
-							<li><a href="#"><i class="icon-calendar"></i> 我的日历</a></li>
-							<li><a href="#"><i class="icon-tasks"></i> 我的任务</a></li>
-							<li class="divider"></li>
 							<li><a href="<?php echo _url('administrator/login/logout');?>"><i class="icon-key"></i> 退出</a></li>
 						</ul>
 					</li>
