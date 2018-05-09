@@ -1,0 +1,8 @@
+/.idea
+/var/*
+composer.lock
+*.log
+!.gitkeep
+.DS_Store
+cms.docx
+*.htaccess
